@@ -1,0 +1,63 @@
+/* Desarrolle un programa en Java quea partir de una matriz de trayectorias y una
+
+de pesos, haga lo siguiente:
+
+a. Muestre todos los caminos que hay entre cada par de vértices del grafo.
+
+b. Muestre los caminos con menor peso en el grafo.*/
+int cantidad_vertices=0;
+int matriz[1000][1000];
+
+#include <algorithm>    // std::min
+#include <stdio.h>
+void iterar_matriz(int tamanio)
+{
+		for(int i =0; i < tamanio; i++)
+	    {
+			for(int j=0; j < tamanio; j++)
+			{
+				for(int k=0; k<tamanio; k++)
+				{
+				printf("%d", std::min(1,3));
+				}
+			}
+		}
+}
+
+
+void imprimir_matriz(int tamanio)
+{
+	for(int i =0; i < tamanio; i++)
+	{
+		for(int j=0; j < tamanio; j++)
+		{
+			printf("Pocicion [%d][%d]: %d\n", i, j, matriz[i][j]);
+		}
+	
+	}
+}
+
+void rellenar_matriz(int tamanio)
+{
+	for(int i =0; i < tamanio; i++)
+	{
+		for(int j=0; j < tamanio; j++)
+		{
+			int tmp=0;
+			printf("Ingrese la posicicion [%d][%d] : ", i,j); scanf("%d", &tmp);
+			matriz[i][j]=tmp;
+		}
+	
+	}
+}
+int main (int args, char **argv)
+{
+	printf("Ingrese la cantidad de vertices: ");
+	scanf("%d", &cantidad_vertices);
+
+	rellenar_matriz(cantidad_vertices);
+	imprimir_matriz(cantidad_vertices);
+	printf("hola mundo!\n");
+	return 0;
+}
+
